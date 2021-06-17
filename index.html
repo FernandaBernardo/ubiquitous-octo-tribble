@@ -1,0 +1,54 @@
+<html>
+  <body onload="counter()">
+    <p>Faltam</p>
+    <div>
+      <span id="days"></span>
+      <sup id="hours"></sup>
+    </div>
+    <p>dias!</p>
+  
+    <style>
+      body {
+        background-color: #4D2C91;
+        font-family: "Montserrat";
+        color: #F8BBD0;
+        font-weight: bold;
+        font-size: 80px;
+      }
+
+      div {
+        display: inline-block;
+        font-size: 150px;
+      }
+
+      #hours {
+        font-size: 80px;
+      }
+    </style>
+  </body>
+
+  <script>
+    let daysElement = document.getElementById("days");
+    let hoursElement = document.getElementById("hours")
+    function counter() {
+      function getDiff(now, end) {
+        var diff = (end - now) / (1000 * 60 * 60 * 24);
+        return {
+          days: Math.floor(diff),
+          hours: diff - Math.floor(diff),
+        };
+      }
+
+      const FINAL_DATE = "Aug 28, 2021";
+      let end = Date.parse(FINAL_DATE);
+
+      setInterval(function() {
+        let now = new Date();
+        let counter = getDiff(now, end);
+
+        daysElement.innerHTML = counter.days;
+        hoursElement.innerHTML = "." + Math.floor(counter.hours * 10000000);
+      }, 100);
+    }
+  </script>
+</html>
