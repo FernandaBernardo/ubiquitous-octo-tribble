@@ -1,28 +1,40 @@
 <html>
   <body onload="counter()">
     <p>Faltam</p>
-    <div>
+    <div class="content">
       <span id="days"></span>
-      <sup id="hours"></sup>
+      <div class="legal">
+        <sup id="hours"></sup>
+        <p>dias!</p>
+      </div>
     </div>
-    <p>dias!</p>
+    
   
     <style>
       body {
+        margin: 2em;
         background-color: #4D2C91;
         font-family: "Montserrat";
         color: #F8BBD0;
         font-weight: bold;
         font-size: 80px;
       }
-
-      div {
-        display: inline-block;
+      
+      .content {
         font-size: 150px;
+        display: flex;
+        align-items: baseline;
+      }
+
+      .legal p{
+        font-size: 40px;
+        margin: 0 0.5em;
+        font-weight: normal;
+        color: #9470D4;
       }
 
       #hours {
-        font-size: 80px;
+        font-size: 60px;
       }
     </style>
   </body>
